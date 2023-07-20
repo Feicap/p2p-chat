@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'scala'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+group 'com.tf.Chat24'
+version ''
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = '18'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+javafx {
+    version = '18.0.2'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+def versions = [
+        ScalaBinary: "2.13"
+]
+
+dependencies {
+    //akka
+    implementation platform("com.typesafe.akka:akka-bom_${versions.ScalaBinary}:2.8.3")
+    implementation "com.typesafe.akka:akka-cluster_${versions.ScalaBinary}"
+    implementation "com.typesafe.akka:akka-cluster-sharding-typed_${versions.ScalaBinary}"
+    implementation "com.typesafe.akka:akka-serialization-jackson_${versions.ScalaBinary}"
+    implementation "com.typesafe.akka:akka-actor_${versions.ScalaBinary}"
+    //logback
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+
+    implementation 'org.scala-lang:scala-library:2.13.10'
+
+    implementation('org.controlsfx:controlsfx:11.1.2')
+}
+
+apply plugin: 'java'
+apply plugin: 'scala'
+apply plugin: 'application'
+
+mainClassName = 'com.tf.chat24.Main'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.tf.chat24.Main'
+    }
+}
