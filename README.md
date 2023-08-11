@@ -1,5 +1,3 @@
-p2p chat
+p2p cluster chat on scala
 
-to send private msg:
-
-@nickname msg
+Двойной клик по нику в списке для лс.
