@@ -9,5 +9,6 @@
     <file url="file://$PROJECT_DIR$/src/main/scala/com/tf/chat24/MsgSender.scala" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/main/scala/com/tf/chat24/Priv.scala" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/main/scala/com/tf/chat24/Pub.scala" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/userlist.txt" charset="windows-1251" />
   </component>
 </project>
